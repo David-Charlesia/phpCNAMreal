@@ -1,0 +1,8 @@
+#mapid{
+    height: 75vh;
+    width: 100%;
+}
+.mypopup{
+    max-height: 40em;
+    overflow: auto;
+}
