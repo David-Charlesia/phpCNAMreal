@@ -31,7 +31,7 @@
         <form action="index.php?controller=results&action=results" method="post">
 
             <input type="text" placeholder="ville" name="city" id="ville" required/>
-            <input type="submit"/>
+            <input type="submit" value="Rechercher"/>
 
         </form>
 
