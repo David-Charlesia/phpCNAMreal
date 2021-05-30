@@ -16,6 +16,21 @@ class Controller_sign extends Controller{
     }
   }
 
+  public function action_signup(){
+    $bd = Model::getModel();
+
+    $bd->createAccount($_POST['pseudo'], $_POST['password'], $_POST['email'], $_POST['level']);
+    sleep(1);
+    $connect = $bd->connect($_POST['pseudo'], $_POST['password']);
+
+    if($connect === true) {
+      $this->render('home',["pseudo"=>$_POST['pseudo']]);
+    }else{
+      $tab=["retry"=>true];
+      $this->render('sign',$tab);
+    }
+  }
+
   public function action_display(){
     $this->render('sign');
   }

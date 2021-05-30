@@ -1,0 +1,20 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding-bottom: 2em;
+}
+
+#container table{
+    border-spacing: 0em;
+}
+
+#container tr td{
+    text-align: center;
+    border-style: solid;
+    border-left: 0em;
+    border-right: 0em;
+    border-top: 0em;
+    height: 2em;
+}
+

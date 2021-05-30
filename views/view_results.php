@@ -2,7 +2,7 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8"/>
-		<title> PHP CNAM</title>
+		<title>PHP CNAM</title>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin=""/>
@@ -13,7 +13,7 @@
 	<body>
 		<nav>
 			<ul>
-                <li><a href="?controller=search" >Page de recherche</a></li>
+                <li><a href="?controller=home" >Page de recherche</a></li>
 				<li><a href="?controller=map&action=map" >Carte</a></li>
 				<li><a href="?controller=sign&action=signout">Se déconnecter</a></li>
 			</ul>
@@ -27,20 +27,20 @@
 		</header>
         
         <main>
-         
+        <div id=container>
         <?php 
         $fields = sparql_field_array( $results );
           
-        print "<p>Number of rows: ".sparql_num_rows( $results )." results.</p>";
-        print "<table>";
-        print "<tr>";
-        foreach( $fields as $field )
-        {
-           print "<th>$field</th>";
-        }
-        print "</tr>";
-
-
+        print "<p>Nombre de résultats: ".sparql_num_rows( $results )." results.</p>";
+        ?>
+        <table>
+        <tr>
+        <th>Lien</th>
+        <th>Titre</th>
+        <th>Date</th>
+        <th>Lieu</th>
+        </tr>
+        <?php
         $marker_js = "";
         $temp = "";
         $tab=[];
@@ -53,8 +53,8 @@
            print"<tr>";
            print "<td><a href=".$row['Spectacle'].">Lien</a></td>";
            print "<td>".$row['Titre']."</td>";
-           print "<td>".$row['Date']."</td>";
-           print "<td>".$row['focus']."</td>";
+           $date = new DateTime($row['Date']);
+           print "<td>".$date->format('d-m-Y')."</td>";
            print "<td>".$row['Nom_Lieu']."</td>";
            print"</tr>";
 
@@ -78,6 +78,7 @@
      }
 
         ?>
+        </div>
         <div id="mapid">
 
 </div>

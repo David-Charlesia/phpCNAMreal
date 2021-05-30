@@ -14,9 +14,9 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="view_search.php" >Page de recherche</a></li>
-				<li><a href="view_card.php" >Carte</a></li>
-				<li><a href="view_signin.php">Se connecter/Créer un compte</a></li>
+				<li><a href="?controller=home" >Page de recherche</a></li>
+				<li><a href="?controller=map&action=map" >Carte</a></li>
+				<li><a href="?controller=sign&action=signout">Se déconnecter</a></li>
 			</ul>
 		</nav>
 

@@ -9,9 +9,9 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="./views/view_search.php" >Page de recherche</a></li>
-				<li><a href="./views/view_card.php" >Carte</a></li>
-				<li><a href="./views/view_search.php">Se connecter/Créer un compte</a></li>
+            <li><a href="?controller=home" >Page de recherche</a></li>
+				<li><a href="?controller=map&action=map" >Carte</a></li>
+				<li><a href="?controller=sign">Se connecter/Créer un compte</a></li>
 			</ul>
 		</nav>
 
@@ -32,7 +32,7 @@
 
             <div class="form">
                 <h2>Créer un compte : </h2>
-                <form action="?sign=signup" method="post">
+                <form action="?controller=sign&action=signup" method="post">
                     <input type="text" placeholder="pseudo" name="pseudo" required/>
                     <input type="email" placeholder="email" name="email" required/>
                     <input type="password" placeholder="mot de passe" name="password" required/>
