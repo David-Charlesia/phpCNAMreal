@@ -11,6 +11,7 @@
 				<li><a href="?controller=search" >Page de recherche</a></li>
 				<li><a href="?controller=map&action=map" >Carte</a></li>
 				<li><a href="?controller=sign&action=signout">Se déconnecter</a></li>
+				<li><a href="?controller=admin">Admin</a></li>
 			</ul>
 		</nav>
 

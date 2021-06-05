@@ -18,3 +18,11 @@
     height: 2em;
 }
 
+
+#container .pair{
+    background-color: rgba(#66c9f786);
+}
+
+#container .impair{
+    background-color: rgba(#f7ac6686);
+}

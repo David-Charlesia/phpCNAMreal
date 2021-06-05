@@ -4,7 +4,7 @@ require_once "models/Model.php";
 require_once "models/sparqllib.php";
 require_once "controllers/Controller.php"; //Inclusion de la classe Controller
 
-$controllers = ["home", "results", "map", "sign"]; //Liste des contrôleurs -- A RENSEIGNER (FAIT)
+$controllers = ["home", "results", "map", "sign", "admin"]; //Liste des contrôleurs -- A RENSEIGNER (FAIT)
 $controller_default = "home"; //Nom du contrôleur par défaut-- A RENSEIGNER (FAIT)
 
 

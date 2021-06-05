@@ -157,6 +157,24 @@ class Model
     
         $req->execute();
     }
+
+    public function getUserForValidation() {
+        $req = $this->bd_account->prepare('SELECT * FROM accountPHPCNAM WHERE validate=0');
+        $req->execute();
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function validateUser($id,$validation=1) {
+        if($validation===1){
+            $req = $this->bd_account->prepare('UPDATE accountPHPCNAM SET validate=1 WHERE id=:id');
+            $req->bindValue(':id',$id);
+            $req->execute();
+        }else{
+            $req = $this->bd_account->prepare('UPDATE accountPHPCNAM SET validate=1, privilege=3 WHERE id=:id');
+            $req->bindValue(':id',$id);
+            $req->execute();
+        }
+    }
 }
 
 ?>

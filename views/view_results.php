@@ -45,12 +45,12 @@
         $temp = "";
         $tab=[];
         $tab_temp=[];
-
+        $i = 0;
         while( $row = sparql_fetch_array( $results ) ){
             //$row['Titre']='tesssssssssssst';
            // $marker_js= $marker_js."L.marker([".$row['Latitude'].", ".$row['Longitude']."]).addTo(mymap).bindPopup('<h2>Titre : ".addslashes($row['Titre'])."</h2><h3>Lieu : ".$row['Nom_Lieu']."</h3><h3>Date : ".$row['Date']."</h3><a href=".$row['Spectacle'].">Lien</a>');";
-
-           print"<tr>";
+            $class = ($i%2 == 0) ? "pair":"impair";
+           print"<tr class='".$class."'>";
            print "<td><a href=".$row['Spectacle'].">Lien</a></td>";
            print "<td>".$row['Titre']."</td>";
            $date = new DateTime($row['Date']);
@@ -68,7 +68,7 @@
             }
 
         
-
+            $i = $i + 1;
            //$marker_js= $marker_js."L.marker([".$row['Latitude'].", ".$row['Longitude']."]).addTo(mymap).bindPopup('<h2>Titre : ".addslashes($row['Titre'])."</h2><h3>Lieu : ".addslashes($row['Nom_Lieu'])."</h3><h3>Date : ".addslashes($row['Date'])."</h3><a href=".addslashes($row['Spectacle']).">Lien</a>');";
         }
         print "</table>";
