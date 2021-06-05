@@ -16,11 +16,24 @@
 
         <form action="index.php?controller=results&action=results" method="post">
 
-            <input type="text" placeholder="ville" name="city" id="ville" required/>
-            <input type="submit" value="Rechercher"/>
+            <input type="text" placeholder="ville" name="city" id="ville" class="input" required/>
+            <input type="submit" value="Rechercher par ville"/>
 
         </form>
 
+		<form action="index.php?controller=results&action=results" method="post">
+
+            <input type="date" placeholder="date" name="date" id="date" class="input" required/>
+            <input type="submit" value="Rechercher par date"/>
+
+        </form>
+
+		<form action="index.php?controller=results&action=results" method="post">
+
+            <input type="number" placeholder="année" name="year" id="year" class="input" required/>
+            <input type="submit" value="Rechercher par année"/>
+
+        </form>
 
         </main>
 

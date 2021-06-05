@@ -1,5 +1,7 @@
 body{
     background-image: url('../img/avion.jpg');
+    display: flex;
+    flex-direction: column;
 }
 header{
     display: flex;
@@ -30,8 +32,10 @@ form{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
-#ville{
+.input{
     width: 25em;
     height: 2.5em;
     border-radius: 1em;
@@ -60,4 +64,13 @@ nav ul{
 nav ul li a{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+}
+
+.accepted{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#contributions{
+    display: flex;
 }

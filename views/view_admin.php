@@ -1,5 +1,10 @@
 <?php require('views/view_begin.php'); ?>
 
+<?php
+    if(isset($bruh)){
+        echo "<h1>ALERTE ALERTE, INTRU DETECTE, CALCUL DE SA POSITION GPS... DESTRUCTION DE SON PC...</h1>";
+    }else{
+?>
 
         <?= print_r($usersToValidate) ?>
         <table id="tableau_to_validate">
@@ -37,5 +42,5 @@
         </table>
         
 
-
+<?php } ?>
 <?php require('views/view_end.php'); ?>

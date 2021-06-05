@@ -23,7 +23,15 @@
         }
 
         public function action_default() {
+            if($_COOKIE["privilege"]>1){
+                $this->bruh();
+            }
             $this->action_admin();
+        }
+
+        public function bruh() {
+            $this->tab['bruh']='bruh';
+            $this->render('admin',$this->tab);
         }
 
     }

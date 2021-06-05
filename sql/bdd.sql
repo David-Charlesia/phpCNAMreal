@@ -18,3 +18,16 @@ INSERT INTO accountPHPCNAM (pseudo,email,pwd,privilege,validate)VALUES(
     1,
     true
 );
+
+CREATE TABLE IF NOT EXISTS contributions(
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_user INT(6) NOT NULL,
+    accepted BOOLEAN NOT NULL,
+    lien TEXT NOT NULL
+);
+
+INSERT INTO contributions (id_user,accepted,lien) VALUES(
+    1,
+    1,
+    'https://www.centrepompidou.fr/fr/programme/agenda/evenement/3XHsNOt'
+);
