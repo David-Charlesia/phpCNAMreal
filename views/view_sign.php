@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="utf-8"/>
-		<title>Connexion/Créer son compte</title>
-		<link rel="stylesheet" href="contents/css/phpcnam.css"/>
-        <link rel="stylesheet" href="contents/signin.css"/>
-	</head>
-	<body>
-		<nav>
-			<ul>
-            <li><a href="?controller=home" >Page de recherche</a></li>
-				<li><a href="?controller=map&action=map" >Carte</a></li>
-				<li><a href="?controller=sign">Se connecter/Créer un compte</a></li>
-			</ul>
-		</nav>
+<?php require('views/view_begin.php'); ?>
 
         <div id=forms>
             <div class="form">
@@ -62,5 +47,4 @@
             </div>
         </div>
 
-    </body>
-</html>
+<?php require('views/view_end.php'); ?>

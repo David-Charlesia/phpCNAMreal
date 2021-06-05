@@ -2,6 +2,8 @@
 
 class Controller_sign extends Controller{
 
+  private $tab = ["pageName"=>"Connexion/Créer un compte"];
+
   public function action_signin(){
     
     $bd = Model::getModel();
@@ -9,10 +11,10 @@ class Controller_sign extends Controller{
     $connect = $bd->connect($_POST['pseudo'], $_POST['password']);
 
     if($connect === true) {
-        $this->render('home',["pseudo"=>$_POST['pseudo']]);
+        $this->render('home',["pageName"=>"Acceuil","pseudo"=>$_POST['pseudo']]);
     }else{
-        $tab=["retry"=>true];
-        $this->render('sign',$tab);
+        $this->tab["retry"]=true;
+        $this->render('sign',$this->tab);
     }
   }
 
@@ -24,15 +26,15 @@ class Controller_sign extends Controller{
     $connect = $bd->connect($_POST['pseudo'], $_POST['password']);
 
     if($connect === true) {
-      $this->render('home',["pseudo"=>$_POST['pseudo']]);
+      $this->render('home',["pageName"=>"Accueil","pseudo"=>$_POST['pseudo']]);
     }else{
-      $tab=["retry"=>true];
-      $this->render('sign',$tab);
+      $this->tab["retry"]=true;
+      $this->render('sign',$this->tab);
     }
   }
 
   public function action_display(){
-    $this->render('sign');
+    $this->render('sign',$this->tab);
   }
 
   public function action_signout(){
@@ -46,7 +48,7 @@ class Controller_sign extends Controller{
 
       setcookie('validate', null, time() - 3600, null, null, false, true);
 
-      $this->render('sign');
+      $this->render('sign',$this->tab);
   }
 
   public function action_default(){

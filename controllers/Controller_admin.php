@@ -1,14 +1,15 @@
 <?php
 
     class Controller_admin extends Controller{
+        private $tab = ["pageName"=>"admin"];
 
         public function action_admin() {
             $bd = Model::getModel();
             $usersToValidate = $bd->getUserForValidation();
 
-            $tab=['usersToValidate'=>$usersToValidate];
+            $this->tab['usersToValidate']=$usersToValidate;
 
-            $this->render('admin',$tab);
+            $this->render('admin',$this->tab);
         }
 
         public function action_validate() {

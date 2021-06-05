@@ -2,6 +2,8 @@
 
 class Controller_results extends Controller{
 
+  private $tab = ["pageName"=>"Résultats"];
+
   public function action_results(){
     $m=Model::getModel();
     if(isset($_POST["city"])) {
@@ -9,8 +11,11 @@ class Controller_results extends Controller{
     }else{
         $results = $m->doRequestDefault();
     }
-    $tab=['results'=>$results, 'bd'=>$m, 'city'=>$_POST["city"]];
-    $this->render('results',$tab);
+    $this->tab['results']=$results;
+    $this->tab['bd']=$m;
+    $this->tab['city']=$_POST["city"];
+
+    $this->render('results',$this->tab);
   }
 
   public function action_default(){

@@ -2,14 +2,17 @@
 
 class Controller_map extends Controller{
 
+  private $tab = ["pageName"=>"Carte"];
+
   public function action_map(){
     $m=Model::getModel();
 
     $results = $m->doRequestDefault();
 
-    $tab=['results'=>$results,'bd'=>$m];
+    $this->tab['results'] = $results;
+    $this->tab['bd']=$m;
     
-    $this->render('map',$tab);
+    $this->render('map',$this->tab);
   }
 
   public function action_default(){
