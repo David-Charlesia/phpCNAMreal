@@ -3,12 +3,7 @@
 
 
 class Model
-{
-    //private $dsn='mysql:host=localhost;dbname=ville';
-    private $login='root';
-    private $mdp='';
-    private $dnsAccount='mysql:host=localhost;dbname=accountPHPCNAM';
-    
+{   
     private $db;
     //private $bd_ville;
     private $bd_account;
@@ -20,9 +15,10 @@ class Model
 
     private function __construct() {
         try {
+            require('./utils/credentials.php');
             //$this->bd_ville = new PDO($this->dsn, $this->login, $this->mdp);
             //$this->bd_ville->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->bd_account = new PDO($this->dnsAccount, $this->login, $this->mdp);
+            $this->bd_account = new PDO($dnsAccount, $login, $mdp);
             $this->bd_account->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die('Echec connexion, erreur n°' . $e->getCode() . ':' . $e->getMessage());

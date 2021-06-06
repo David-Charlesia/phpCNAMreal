@@ -1,3 +1,15 @@
+# INSTALLATION DU PROJET
+
+- Importez le fichier `bdd.sql` dans votre base de données.
+
+- Entrez vos credentials dans le fichier `credentials.php`.
+
+- Mettez le projet dans le dossier www de Wamp
+
+- Lancer Wamp
+
+- Dans votre navigateur aller à `localhost/nomDuDossierDansLequelEstLeProjet`
+
 ## Enoncé du projet
 
 Il s’agit d’une application web qui exploite des données ouvertes issues de la Bibliothèque nationale de France (BnF) disponibles sur ce portail : https://data.bnf.fr
