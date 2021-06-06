@@ -1,8 +1,8 @@
 # INSTALLATION DU PROJET
 
-- Importez le fichier `bdd.sql` dans votre base de données.
+- Importez le fichier [`bdd.sql`](https://github.com/David-Charlesia/phpCNAMreal/blob/master/sql/bdd.sql) dans votre base de données.
 
-- Entrez vos credentials dans le fichier `credentials.php`.
+- Entrez vos credentials dans le fichier [`credentials.php`](https://github.com/David-Charlesia/phpCNAMreal/blob/master/utils/credentials.php).
 
 - Mettez le projet dans le dossier www de Wamp
 
