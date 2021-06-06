@@ -73,4 +73,7 @@ nav ul li a{
 
 #contributions{
     display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding-bottom: 2em;
 }

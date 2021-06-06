@@ -23,10 +23,10 @@
         ?>
 
         <form id=sendContribution action="?controller=myspace&action=sendContribution" method="post">
-            <input type="text" name="lien" value="Lien"/>
+            <input type="text" name="lien" placeholder="http://www.example.com"/>
             <input type="submit" value="Envoyer ma contribution"/>
         </form>
-
+        
         <?php
         if(count($contributions)>0){
             echo "<table id='contributions'>";

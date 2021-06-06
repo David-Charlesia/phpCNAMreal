@@ -25,11 +25,11 @@
             $this->render('myspace',$this->tab);
         }
 
-        public function sendContribution() {
-            echo 'heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy';
+        public function action_sendContribution() {
             $bd = Model::getModel();
             $bd->sendContribution($_COOKIE["id"], $_POST['lien']);
             $this->tab["contribution_sended"]=1;
+            $this->tab["contrib"]=$_POST['lien'];
             $this->action_default();
         }
 
