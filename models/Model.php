@@ -103,7 +103,7 @@ class Model
             ?focus rdfs:label ?Nom_Lieu .
             ?focus geo:lat ?Latitude .
             ?focus geo:long ?Longitude
-            } LIMIT 100";
+            } LIMIT 3000";
         
         $result = sparql_query( $request );
         if( !$result ) { print sparql_errno() . ": " . sparql_error(). "\n"; exit; }
