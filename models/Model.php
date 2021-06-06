@@ -149,10 +149,6 @@ class Model
     }
 
     public function connect($pseudo, $pwd){
-        if($pwd!=='admin'){
-            $pwd = password_hash($pwd, PASSWORD_DEFAULT);
-        }
-
         $req = $this->bd_account->prepare('SELECT * FROM accountPHPCNAM WHERE pseudo = :pseudo AND pwd = :pwd');
         $req->bindValue(':pseudo',$pseudo);
         $req->bindValue(':pwd',$pwd);
@@ -227,6 +223,24 @@ class Model
         $req->bindValue(':id_user',$id_user);
         $req->execute();
         return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllContributions() {
+        $req = $this->bd_account->prepare('SELECT contributions.id as id_contrib, id_user, lien, pseudo FROM contributions INNER JOIN accountPHPCNAM ON contributions.id_user = accountPHPCNAM.id WHERE accepted=0');
+        $req->execute();
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function validateContrib($id_contrib,$validation=1) {
+        if($validation==1){
+            $req = $this->bd_account->prepare('UPDATE contributions SET accepted=1 WHERE id=:id_contrib');
+            $req->bindValue(':id_contrib',$id_contrib);
+            $req->execute();
+        }else{
+            $req = $this->bd_account->prepare('DELETE FROM contributions WHERE id=:id_contrib');
+            $req->bindValue(':id_contrib',$id_contrib);
+            $req->execute();
+        }
     }
 }
 

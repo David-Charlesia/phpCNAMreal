@@ -8,7 +8,7 @@
 		</header>
         
         <main>
-        <div id=container>
+        <div class=container>
         <?php 
         $fields = sparql_field_array( $results );
           

@@ -71,9 +71,38 @@ nav ul li a{
     height: 1.5em;
 }
 
-#contributions{
+.validate_btn{
+    background-image: url('./../../contents/img/accepted.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 2.5em;
+    width: 2.5em;
+}
+
+.declined_btn{
+    background-image: url('./../../contents/img/refused.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 2.5em;
+    width: 2.5em;
+}
+
+#form_contrib{
+    background-color: #aaaaaacb;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 85%;
-    padding-bottom: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form form input{
+    margin: 1em;
 }

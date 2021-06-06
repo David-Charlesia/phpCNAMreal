@@ -1,28 +1,42 @@
-#container{
+table .pair{
+    background-color: #66c9f786;
+}
+
+table .impair{
+    background-color: #f7ac6686;
+}
+
+.container{
     display: flex;
+    align-items: center;
     flex-direction: column;
-    width: 85%;
-    padding-bottom: 2em;
+    width: 95%;
+    margin: 2em;
 }
 
-#container table{
+table{
     border-spacing: 0em;
+    display: table;
+    width: 85%;
+    border: 3px solid black;
+    border-radius: 2em;
+    overflow: hidden;
+    
 }
 
-#container tr td{
+table form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+table tr{
     text-align: center;
-    border-style: solid;
-    border-left: 0em;
-    border-right: 0em;
-    border-top: 0em;
-    height: 2em;
+    margin: 0em;
 }
 
-
-#container .pair{
-    background-color: rgba(#66c9f786);
-}
-
-#container .impair{
-    background-color: rgba(#f7ac6686);
+table th{
+    font-size: 1.3em;
+    background-color: #aaaaaa86;
 }

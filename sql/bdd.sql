@@ -2,6 +2,9 @@ CREATE DATABASE IF NOT EXISTS accountPHPCNAM CHARACTER SET utf8;
 
 USE accountPHPCNAM;
 
+DROP TABLE IF EXISTS accountPHPCNAM;
+DROP TABLE IF EXISTS contributions;
+
 CREATE TABLE IF NOT EXISTS accountPHPCNAM(
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     pseudo VARCHAR(50) NOT NULL,
@@ -16,6 +19,22 @@ INSERT INTO accountPHPCNAM (pseudo,email,pwd,privilege,validate)VALUES(
     'admin@superuser.com',
     'admin',
     1,
+    true
+);
+
+INSERT INTO accountPHPCNAM (pseudo,email,pwd,privilege,validate)VALUES(
+    'contrib',
+    'contrib@contribuser.com',
+    'contrib',
+    2,
+    false
+);
+
+INSERT INTO accountPHPCNAM (pseudo,email,pwd,privilege,validate)VALUES(
+    'user',
+    'user@simpleuser.com',
+    'user',
+    3,
     true
 );
 

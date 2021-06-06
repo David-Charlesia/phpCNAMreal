@@ -9,8 +9,8 @@
                             print "<p>Pseudo ou mot de passe erronné, veuillez réessayer :</p>";
                         }
                     ?>
-                    <input type="text" placeholder="pseudo" name="pseudo" required/>
-                    <input type="password" placeholder="password" name="password" required/>
+                    <input class="input" type="text" placeholder="pseudo" name="pseudo" required/>
+                    <input class="input" type="password" placeholder="password" name="password" required/>
                     <input type="submit" value="Connexion"/>
                 </form>
             </div>
@@ -18,11 +18,11 @@
             <div class="form">
                 <h2>Créer un compte : </h2>
                 <form action="?controller=sign&action=signup" method="post">
-                    <input type="text" placeholder="pseudo" name="pseudo" required/>
-                    <input type="email" placeholder="email" name="email" required/>
-                    <input id="password" type="password" placeholder="mot de passe" name="password" required onkeyup="verifyPassword()"/>
-                    <input id="password2" type="password" placeholder="retaper le mot de passe" name="password2" required onkeyup="verifyPassword()"/>
-                    <select name="level" id="level">
+                    <input class="input" type="text" placeholder="pseudo" name="pseudo" required/>
+                    <input class="input" type="email" placeholder="email" name="email" required/>
+                    <input class="input" id="password" type="password" placeholder="mot de passe" name="password" required onkeyup="verifyPassword()"/>
+                    <input class="input" id="password2" type="password" placeholder="retaper le mot de passe" name="password2" required onkeyup="verifyPassword()"/>
+                    <select class="input" name="level" id="level">
                         <option value="">--Choisisez un statut--</option>
                         <option value="3">Normal</option>
                         <option value="2">Contributeur</option>
